@@ -32,10 +32,7 @@ public class PlainGraph {
         for (Node node : graph) {
             node.addAttribute("ui.label", node.getId());
         }
-
         explore(graph.getNode("Kabab"));
-
-
     }
 
     public void explore(Node source) {
