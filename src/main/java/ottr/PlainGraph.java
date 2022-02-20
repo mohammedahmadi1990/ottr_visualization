@@ -4,14 +4,18 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 
+import java.io.File;
 import java.util.Iterator;
 
 public class PlainGraph {
-    public static void main(String args[]) {
-        new PlainGraph();
+
+    String fileContent;
+
+    public PlainGraph(String fileContent) {
+        this.fileContent = fileContent;
     }
 
-    public PlainGraph() {
+    public void visualize(){
         Graph graph = new SingleGraph("FreePlane");
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         graph.addAttribute("ui.stylesheet", styleSheet);
@@ -77,35 +81,10 @@ public class PlainGraph {
                     +"node.marked {"
                     +"   fill-color: rgb(140, 190, 245);"
                     +"}";
+
+    public void parseFile() {
+
+
+    }
 }
 
-//            "node {"
-//                    + "shape: rounded-box;"
-//                    + "stroke-mode: plain;"
-//                    + "stroke-color: #000000;"
-//
-//                    + "text-background-color: rgb(255, 0, 0); "
-//                    + "fill-color: black;"
-//                    + "text-alignment: above;"
-//                    + "padding: 0, -10px;"
-//                    + "size: 50px;"
-//                    + "}"
-//                    +"node.marked {"
-//                    +"   fill-color: red;"
-//                    +"}";
-
-
-
-//        graph.setAttribute("stylesheet", "node { "
-//                + "     shape: rounded-box; "
-//                + "     padding: 5px; "
-//                + "     fill-color: white; "
-//                + "     stroke-mode: plain; "
-//                + "     size-mode: fit; "
-//                + "} "
-//                + "edge { "
-//                + "     shape: freeplane; "
-//                + "}");
-//        graph.addAttribute("ui.quality");
-//        graph.addAttribute("ui.antialias");
-//
